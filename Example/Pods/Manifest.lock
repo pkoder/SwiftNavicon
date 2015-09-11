@@ -1,0 +1,14 @@
+PODS:
+  - SwiftNavicon (0.1.0)
+
+DEPENDENCIES:
+  - SwiftNavicon (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftNavicon:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwiftNavicon: c7d1f93519aa85d7d0524314c24e913e9cfb9b9d
+
+COCOAPODS: 0.38.2

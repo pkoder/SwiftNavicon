@@ -1,0 +1,6 @@
+framework module SwiftNavicon {
+  umbrella header "SwiftNavicon-umbrella.h"
+
+  export *
+  module * { export * }
+}
