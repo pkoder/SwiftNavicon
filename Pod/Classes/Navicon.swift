@@ -30,7 +30,7 @@ public class Navicon: UIButton {
         containerLayer.frame = CGRectMake(0, 0, self.bounds.width, self.bounds.height)
         self.layer.addSublayer(containerLayer)
         
-        let myBounds = CGRect(x: 0.0, y: 0.0, width: self.bounds.width - 5, height: self.bounds.height/6)
+        let myBounds = CGRect(x: 0.0, y: 0.0, width: self.bounds.width - 5, height: self.bounds.height/10)
         let cornerRadius = myBounds.height/2
         
         topPosition = CGPoint(x: self.bounds.width/2, y: self.bounds.height/4)
@@ -70,7 +70,7 @@ public class Navicon: UIButton {
         containerLayer.frame = CGRectMake(0, 0, self.frame.width, self.frame.height)
         self.layer.addSublayer(containerLayer)
         
-        let myBounds = CGRect(x: 0.0, y: 0.0, width: self.frame.width - 5, height: self.frame.height/6)
+        let myBounds = CGRect(x: 0.0, y: 0.0, width: self.frame.width - 5, height: self.frame.height/10)
         let cornerRadius = myBounds.height/2
         
         topPosition = CGPoint(x: self.frame.width/2, y: self.frame.height/4)
