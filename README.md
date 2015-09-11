@@ -22,7 +22,7 @@ pod "SwiftNavicon"
 
 ## Author
 
-PK, shinytreasureking@gmail.com
+PK, grassfedapps@gmail.com
 
 ## License
 
