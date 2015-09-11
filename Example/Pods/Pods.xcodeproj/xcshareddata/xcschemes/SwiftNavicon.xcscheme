@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FF8489F81EF249CA608905AE"
+               BlueprintIdentifier = "EF1E2BF94DD3CAB16D084189"
                BuildableName = "SwiftNavicon.framework"
                BlueprintName = "SwiftNavicon"
                ReferencedContainer = "container:Pods.xcodeproj">

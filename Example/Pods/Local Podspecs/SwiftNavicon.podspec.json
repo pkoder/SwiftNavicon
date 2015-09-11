@@ -1,19 +1,19 @@
 {
   "name": "SwiftNavicon",
   "version": "0.1.0",
-  "summary": "A short description of SwiftNavicon.",
-  "description": "",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/SwiftNavicon",
+  "summary": "A custom UIButton with animated Navicon icons",
+  "description": "A custom UIButton written in Swift 2.0 that displays a hamburger/menu (Navicon) that can \n                        animate into different icons e.g cancel",
+  "homepage": "https://github.com/pkoder/SwiftNavicon",
   "license": "MIT",
   "authors": {
-    "PK": "shinytreasureking@gmail.com"
+    "PK": "grassfedapps@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/SwiftNavicon.git",
+    "git": "https://github.com/pkoder/SwiftNavicon.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",

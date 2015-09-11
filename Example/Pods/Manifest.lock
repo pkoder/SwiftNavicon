@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SwiftNavicon: c7d1f93519aa85d7d0524314c24e913e9cfb9b9d
+  SwiftNavicon: 549bc69501f50ab3731c32a716efcbedadcb197f
 
 COCOAPODS: 0.38.2

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SwiftNavicon_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,72 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hh6-hc-dma" customClass="Navicon" customModule="SwiftNavicon">
+                                <rect key="frame" x="283" y="53" width="35" height="35"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="CBs-nL-np4"/>
+                                    <constraint firstAttribute="height" constant="35" id="zlB-Og-jGC"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-Vo-uzL">
+                                <rect key="frame" x="265" y="519" width="70" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.66863532110000001" green="0.85328800579999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="27k-8f-dSv"/>
+                                </constraints>
+                                <state key="normal" title="90d right"/>
+                                <connections>
+                                    <action selector="right90BtnPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qUi-pj-aHe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZq-V5-gfi">
+                                <rect key="frame" x="381" y="519" width="70" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.66863532110000001" green="0.85328800579999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="TmK-4N-zOM"/>
+                                </constraints>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetBtnPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="W9a-jk-PCp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4K-tt-YKz">
+                                <rect key="frame" x="149" y="519" width="70" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.66863532110000001" green="0.85328800579999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="vch-L4-IH7"/>
+                                </constraints>
+                                <state key="normal" title="Cross"/>
+                                <connections>
+                                    <action selector="crossBtnPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZVA-eL-BuE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5G3-Vo-uzL" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="0su-Fr-9Yu"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5G3-Vo-uzL" secondAttribute="bottom" constant="51" id="DNS-Wh-z3H"/>
+                            <constraint firstItem="QZq-V5-gfi" firstAttribute="leading" secondItem="5G3-Vo-uzL" secondAttribute="trailing" constant="46" id="GZn-Je-NxS"/>
+                            <constraint firstItem="5G3-Vo-uzL" firstAttribute="centerY" secondItem="z4K-tt-YKz" secondAttribute="centerY" id="KIf-ps-ODB"/>
+                            <constraint firstItem="5G3-Vo-uzL" firstAttribute="centerY" secondItem="QZq-V5-gfi" secondAttribute="centerY" id="KSR-QL-FI0"/>
+                            <constraint firstItem="Hh6-hc-dma" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="33" id="YDZ-MQ-8E2"/>
+                            <constraint firstItem="5G3-Vo-uzL" firstAttribute="leading" secondItem="z4K-tt-YKz" secondAttribute="trailing" constant="46" id="aGB-hZ-rd2"/>
+                            <constraint firstItem="Hh6-hc-dma" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="eEV-cv-yfx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="naviconBtn" destination="Hh6-hc-dma" id="RCd-jP-ggQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="423" y="560"/>
         </scene>
     </scenes>
 </document>
