@@ -25,8 +25,6 @@ public class Navicon: UIButton {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.layer.masksToBounds = true
-        
         containerLayer.frame = CGRectMake(0, 0, self.bounds.width, self.bounds.height)
         self.layer.addSublayer(containerLayer)
         
@@ -64,8 +62,6 @@ public class Navicon: UIButton {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.layer.masksToBounds = true
         
         containerLayer.frame = CGRectMake(0, 0, self.frame.width, self.frame.height)
         self.layer.addSublayer(containerLayer)
