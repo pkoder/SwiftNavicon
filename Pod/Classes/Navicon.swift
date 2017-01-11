@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Navicon: UIButton {
+open class Navicon: UIButton {
     
     let animationLength = 0.5
     let kTouchSize: CGFloat = 40.0
@@ -25,7 +25,7 @@ public class Navicon: UIButton {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        containerLayer.frame = CGRectMake(0, 0, self.bounds.width, self.bounds.height)
+        containerLayer.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
         self.layer.addSublayer(containerLayer)
         
         let myBounds = CGRect(x: 0.0, y: 0.0, width: self.bounds.width - 5, height: self.bounds.height/10)
@@ -35,7 +35,7 @@ public class Navicon: UIButton {
         
         topLayer.bounds = myBounds
         topLayer.cornerRadius = cornerRadius
-        topLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).CGColor
+        topLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         topLayer.position = topPosition
         
         containerLayer.addSublayer(topLayer)
@@ -44,7 +44,7 @@ public class Navicon: UIButton {
         
         midLayer.bounds = myBounds
         midLayer.cornerRadius = cornerRadius
-        midLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).CGColor
+        midLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         midLayer.position = midPosition
         
         containerLayer.addSublayer(midLayer)
@@ -53,7 +53,7 @@ public class Navicon: UIButton {
         
         botLayer.bounds = myBounds
         botLayer.cornerRadius = cornerRadius
-        botLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).CGColor
+        botLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         botLayer.position = botPosition
         
         containerLayer.addSublayer(botLayer)
@@ -63,7 +63,7 @@ public class Navicon: UIButton {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         
-        containerLayer.frame = CGRectMake(0, 0, self.frame.width, self.frame.height)
+        containerLayer.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         self.layer.addSublayer(containerLayer)
         
         let myBounds = CGRect(x: 0.0, y: 0.0, width: self.frame.width - 5, height: self.frame.height/10)
@@ -73,7 +73,7 @@ public class Navicon: UIButton {
         
         topLayer.bounds = myBounds
         topLayer.cornerRadius = cornerRadius
-        topLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).CGColor
+        topLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         topLayer.position = topPosition
         
         containerLayer.addSublayer(topLayer)
@@ -82,7 +82,7 @@ public class Navicon: UIButton {
         
         midLayer.bounds = myBounds
         midLayer.cornerRadius = cornerRadius
-        midLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).CGColor
+        midLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         midLayer.position = midPosition
         
         containerLayer.addSublayer(midLayer)
@@ -91,7 +91,7 @@ public class Navicon: UIButton {
         
         botLayer.bounds = myBounds
         botLayer.cornerRadius = cornerRadius
-        botLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).CGColor
+        botLayer.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0).cgColor
         botLayer.position = botPosition
         
         containerLayer.addSublayer(botLayer)
@@ -100,37 +100,37 @@ public class Navicon: UIButton {
     
     //MARK: Override Touch Events
     
-    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.transform = CGAffineTransformMakeScale(0.8, 0.8)
-            }) { (Bool) -> Void in
-                super.touchesBegan(touches, withEvent: event)
-        }
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+            self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }, completion: { (Bool) -> Void in
+                super.touchesBegan(touches, with: event)
+        }) 
     }
     
-    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        UIView.animateWithDuration(0.5,
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        UIView.animate(withDuration: 0.5,
             delay: 0,
             usingSpringWithDamping: 0.2,
             initialSpringVelocity: 6.0,
-            options: UIViewAnimationOptions.AllowUserInteraction,
+            options: UIViewAnimationOptions.allowUserInteraction,
             animations: { () -> Void in
-                self.transform = CGAffineTransformIdentity
+                self.transform = CGAffineTransform.identity
             }) { (Bool) -> Void in
-                super.touchesEnded(touches, withEvent: event)
+                super.touchesEnded(touches, with: event)
         }
         
         let touch = touches.first
-        let touchLocation = touch!.locationInView(self)
+        let touchLocation = touch!.location(in: self)
         if ((touchLocation.x >= 0.0) && (touchLocation.x <= kTouchSize) && (touchLocation.y >= 0.0) && (touchLocation.y <= kTouchSize)) {
-            self.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+            self.sendActions(for: UIControlEvents.touchUpInside)
         }
     }
     
     
     //MARK: Animation Methods
     
-    public func transformCross(animated animated: Bool) {
+    open func transformCross(animated: Bool) {
         
         if (!animated)
         {
@@ -138,12 +138,12 @@ public class Navicon: UIButton {
             return
         }
         
-        UIView.animateWithDuration(animationLength, animations: { () -> Void in
+        UIView.animate(withDuration: animationLength, animations: { () -> Void in
             self.crossTransform()
             }, completion: nil)
     }
     
-    public func transformReset(animated animated: Bool) {
+    open func transformReset(animated: Bool) {
         
         if (!animated)
         {
@@ -151,19 +151,19 @@ public class Navicon: UIButton {
             return
         }
         
-        UIView.animateWithDuration(animationLength, animations: { () -> Void in
+        UIView.animate(withDuration: animationLength, animations: { () -> Void in
             self.resetTransform()
             }, completion: nil)
     }
     
-    public func transformRotate(animated animated: Bool) {
+    open func transformRotate(animated: Bool) {
         if (!animated)
         {
             rotateTransform()
             return
         }
         
-        UIView.animateWithDuration(animationLength, animations: { () -> Void in
+        UIView.animate(withDuration: animationLength, animations: { () -> Void in
             self.rotateTransform()
             }, completion: nil)
     }
